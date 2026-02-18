@@ -33,15 +33,15 @@ services:
         - 8102:3306
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     container_name: andrew2_db
-  phpmyadmin:
-      image: phpmyadmin/phpmyadmin
-      environment:
-          PMA_HOST: db
-          MYSQL_ROOT_PASSWORD: root
-      depends_on:
-          - db
-      ports:
-          - 3002:80
+#  phpmyadmin:
+#      image: phpmyadmin/phpmyadmin
+#      environment:
+#          PMA_HOST: db
+#          MYSQL_ROOT_PASSWORD: root
+#      depends_on:
+#          - db
+#      ports:
+#          - 3002:80
 
 ###> doctrine/doctrine-bundle ###
   database:
@@ -51,13 +51,13 @@ services:
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-app}
       # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123456}
-      POSTGRES_USER: ${POSTGRES_USER:-app}
-
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: app
+      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
-      - database_data:/var/lib/postgresql/data:rw
+     #- database_data:/var/lib/postgresql/data:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
+      - ./_docker/db/data:/var/lib/postgresql/data:rw
 ###< doctrine/doctrine-bundle ###
 volumes:
 ###> doctrine/doctrine-bundle ###
