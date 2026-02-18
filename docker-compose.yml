@@ -19,20 +19,20 @@ services:
     volumes:
       - ./:/var/www
     depends_on:
-        - db
+        - database
     container_name: andrew2_app
-  db:
-    image: mysql:8.0
-    restart: always
-    volumes:
-        - ./tmp/db:/var/lib/mysql
-    environment:
-        MYSQL_DATABASE: db_docker
-        MYSQL_ROOT_PASSWORD: root
-    ports:
-        - 8102:3306
-    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
-    container_name: andrew2_db
+#  db:
+#    image: mysql:8.0
+#    restart: always
+#    volumes:
+#        - ./tmp/db:/var/lib/mysql
+#    environment:
+#        MYSQL_DATABASE: db_docker
+#        MYSQL_ROOT_PASSWORD: root
+#    ports:
+#        - 8102:3306
+#    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+#    container_name: andrew2_db
 #  phpmyadmin:
 #      image: phpmyadmin/phpmyadmin
 #      environment:
