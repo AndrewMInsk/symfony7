@@ -12,7 +12,7 @@ class IndexController
     {
         $number = random_int(0, 100);
         return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
+            '<html><body>Lucky n21umber: '.$number.'</body></html>'
         );
     }
 }
