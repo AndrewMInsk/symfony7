@@ -18,6 +18,8 @@ services:
         dockerfile: _docker/app/Dockerfile
     volumes:
       - ./:/var/www
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
         - database
     container_name: andrew2_app
