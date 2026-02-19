@@ -25,7 +25,7 @@ class GoCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-
+        dd('Привет САША');
         return Command::SUCCESS;
     }
 }

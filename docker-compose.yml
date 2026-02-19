@@ -16,6 +16,8 @@ services:
     build:
         context: .
         dockerfile: _docker/app/Dockerfile
+    environment:
+      - PHP_IDE_CONFIG=serverName=symfony
     volumes:
       - ./:/var/www
     extra_hosts:
