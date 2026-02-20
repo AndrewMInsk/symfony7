@@ -4,6 +4,7 @@ namespace App\Command;
 
 use App\Entity\Category;
 use App\Entity\Post;
+use App\Entity\Tag;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -35,6 +36,7 @@ class GoCommand extends Command
             'status' => 2,
             'category_id' => 1,
         ];
+        //add
         $category = $this->em->getRepository(Category::class)->find($data['category_id']);
         $post = new Post();
         $post->setTitle($data['title']);
@@ -44,8 +46,32 @@ class GoCommand extends Command
         $post->setCategory($category);
         $post->setDescription($data['description']);
 
+       // $this->em->persist($post);
+      //  $this->em->flush();
+        //update
+        $post = $this->em->getRepository(Post::class)->find(5);
+        $post->setTitle('121225552');
+        $post->setContent('content2'??'345');
+        $post->setPublishedAt($data['published_at']);
+        $post->setStatus($data['status']??2);
+        $post->setCategory($category);
+        $post->setDescription($data['description']);
         $this->em->persist($post);
         $this->em->flush();
+        //delete
+        $post = $this->em->getRepository(Post::class)->find(7);
+        if($post) {
+            $this->em->remove($post);
+            $this->em->flush();
+        }
+        //add tag
+        $post = $this->em->getRepository(Post::class)->find(1);
+        $tag = $this->em->getRepository(Tag::class)->find(1);
+        //$post->toogle($tag);
+        $post->sync($tag);
+        $this->em->persist($post);
+        $this->em->flush();
+
         dd($post);
         return Command::SUCCESS;
     }

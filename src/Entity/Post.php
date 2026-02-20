@@ -149,4 +149,25 @@ class Post
         return $this;
     }
 
+    public function toogle(Tag $tag): static
+    {
+        if($this->getTags()->contains($tag)) {
+            $this->getTags()->removeElement($tag);
+        }
+        else{
+            $this->getTags()->add($tag);
+        }
+        return $this;
+    }
+    public function sync(Tag $tag): static
+    {
+        foreach ($this->getTags() as $tag1) {
+            $this->getTags()->removeElement($tag1);
+        }
+
+            $this->getTags()->add($tag);
+
+        return $this;
+    }
+
 }
