@@ -3,10 +3,12 @@
 namespace App\Entity;
 
 use App\Repository\PostRepository;
+use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
@@ -16,18 +18,25 @@ class Post
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank(allowNull: null, normalizer: 'trim', message: 'bla bla bla')]
+    #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Assert\NotBlank(allowNull: true, normalizer: 'trim', message: 'bla bla bla')]
+    #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[Assert\NotBlank(allowNull: true, normalizer: 'trim', message: 'bla bla bla')]
+    #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $content = null;
-
+    #[Assert\Type(type: DateTimeImmutable::class)]
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $publishedAt = null;
-
+    #[Assert\Type(type: 'integer')]
+    #[Assert\NotNull]
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $status = 1;
 
