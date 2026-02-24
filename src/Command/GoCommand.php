@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Tag;
 use App\Factory\PostFactory;
+use App\Factory\StorePostInputDTOFactory;
 use App\Resource\PostResource;
 use App\ResponseBuilder\PostResponseBuilder;
 use App\Service\PostService;
@@ -33,6 +34,7 @@ class GoCommand extends Command
         private readonly PostResource $postResource,
         private PostResponseBuilder $postResponseBuilder,
         private PostFactory $postFactory,
+        private StorePostInputDTOFactory $storePostInputDTOFactory,
     )
     {
         parent::__construct();
@@ -48,11 +50,13 @@ class GoCommand extends Command
             'status' => 2,
             'category_id' => 1,
         ];
+        // обрабатываем Request
+        // мы делаем это для того что бы конкретно нужный атрибутивный состав валидировать и сохранять
+     //   $post = $this->postFactory->makeStorePostInputDTO($data);
+        $storePostInputDTO = $this->storePostInputDTOFactory->makeStorePostInputDTO($data); // фабрика раз
 
-        $post = $this->postFactory->makePost($data);
-
-        $this->postValidator->validate($post);
-        $this->postService->store($post);
+        $this->postValidator->validate($storePostInputDTO); // по конвенции валидатор может принимать только DTO
+        $post = $this->postService->store($storePostInputDTO);
 
      //   $post = $this->postResource->postItem($post);
         $res = $this->postResponseBuilder->storeBuilder($post);

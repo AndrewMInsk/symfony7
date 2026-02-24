@@ -2,6 +2,7 @@
 
 namespace App\Validator;
 
+use App\DTO\Input\StorePostInputDTO;
 use App\Entity\Post;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -12,7 +13,7 @@ class PostValidator
     {
     }
 
-    public function validate(Post $post): void{
+    public function validate(StorePostInputDTO $post): void{
         $errors = $this->validator->validate($post);
         $messages = [];
         if(count($errors) > 0){

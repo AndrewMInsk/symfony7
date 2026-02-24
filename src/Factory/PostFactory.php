@@ -2,6 +2,7 @@
 
 namespace App\Factory;
 
+use App\DTO\Input\StorePostInputDTO;
 use App\Entity\Category;
 use App\Entity\Post;
 use Doctrine\ORM\EntityManagerInterface;
@@ -12,15 +13,15 @@ class PostFactory
     {
     }
 
-    public function makePost(array $data): Post{
-        $category = $this->entityManager->getReference(Category::class, $data['category_id']);
+    public function makePost(StorePostInputDTO $storePostInputDTO): Post{
+        $category = $this->entityManager->getReference(Category::class, $storePostInputDTO->categoryId);
         $post = new Post();
-        $post->setTitle($data['title']);
-        $post->setContent($data['content']);
-        $post->setPublishedAt($data['published_at']);
-        $post->setStatus($data['status']);
+        $post->setTitle($storePostInputDTO->title);
+        $post->setContent($storePostInputDTO->content);
+        $post->setPublishedAt($storePostInputDTO->publishedAt);
+        $post->setStatus($storePostInputDTO->status);
         $post->setCategory($category);
-        $post->setDescription($data['description']);
+        $post->setDescription($storePostInputDTO->description);
         return $post;
     }
 
