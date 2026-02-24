@@ -53,7 +53,7 @@ class GoCommand extends Command
         // обрабатываем Request
         // мы делаем это для того что бы конкретно нужный атрибутивный состав валидировать и сохранять
      //   $post = $this->postFactory->makeStorePostInputDTO($data);
-        $storePostInputDTO = $this->storePostInputDTOFactory->makeStorePostInputDTO($data); // фабрика раз
+        $storePostInputDTO = $this->storePostInputDTOFactory->makeStorePostInputDTO($data); // фабрика один
 
         $this->postValidator->validate($storePostInputDTO); // по конвенции валидатор может принимать только DTO
         $post = $this->postService->store($storePostInputDTO);
