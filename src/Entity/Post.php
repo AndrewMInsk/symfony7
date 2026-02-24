@@ -9,36 +9,41 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
 {
+    #[Groups(groups: ['post:item', 'post:list'])]
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
+    #[Groups(groups: ['post:item'])]
     #[Assert\NotBlank(allowNull: null, normalizer: 'trim', message: 'bla bla bla')]
     #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
-
+    #[Groups(groups: ['post:item'])]
     #[Assert\NotBlank(allowNull: true, normalizer: 'trim', message: 'bla bla bla')]
     #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
-
+    #[Groups(groups: ['post:item'])]
     #[Assert\NotBlank(allowNull: true, normalizer: 'trim', message: 'bla bla bla')]
     #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $content = null;
+    #[Groups(groups: ['post:item'])]
     #[Assert\Type(type: DateTimeImmutable::class)]
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $publishedAt = null;
+    #[Groups(groups: ['post:item'])]
     #[Assert\Type(type: 'integer')]
     #[Assert\NotNull]
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $status = 1;
+    #[Groups(groups: ['post:item'])]
 
     #[ORM\ManyToOne(inversedBy: 'posts')]
     #[ORM\JoinColumn(nullable: false)]

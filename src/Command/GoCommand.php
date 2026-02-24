@@ -5,6 +5,9 @@ namespace App\Command;
 use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Tag;
+use App\Factory\PostFactory;
+use App\Resource\PostResource;
+use App\ResponseBuilder\PostResponseBuilder;
 use App\Service\PostService;
 use App\Validator\PostValidator;
 use Doctrine\ORM\EntityManagerInterface;
@@ -27,6 +30,9 @@ class GoCommand extends Command
         private EntityManagerInterface $em,
         private readonly PostService   $postService,
         private PostValidator $postValidator,
+        private readonly PostResource $postResource,
+        private PostResponseBuilder $postResponseBuilder,
+        private PostFactory $postFactory,
     )
     {
         parent::__construct();
@@ -35,24 +41,22 @@ class GoCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $data = [
-            'title' => '',
+            'title' => '12',
             'content' => 'content1',
             'description' => 'description1',
             'published_at' => new \DateTimeImmutable('2025-12-20'),
             'status' => 2,
             'category_id' => 1,
         ];
-        $category = $this->em->getReference(Category::class, $data['category_id']);
-        $post = new Post();
-        $post->setTitle($data['title']);
-        $post->setContent($data['content']);
-        $post->setPublishedAt($data['published_at']);
-        $post->setStatus($data['status']);
-        $post->setCategory($category);
-        $post->setDescription($data['description']);
-        $errors = $this->postValidator->validate($post);
-        dd($errors);
+
+        $post = $this->postFactory->makePost($data);
+
+        $this->postValidator->validate($post);
         $this->postService->store($post);
+
+     //   $post = $this->postResource->postItem($post);
+        $res = $this->postResponseBuilder->storeBuilder($post);
+        dd($res);
 
         return Command::SUCCESS;
     }
