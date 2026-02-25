@@ -7,8 +7,15 @@ use Symfony\Component\Validator\Constraint;
 #[\Attribute]
 class EntityExists extends Constraint
 {
-    public function __construct(mixed $options = null, ?array $groups = null, mixed $payload = null)
+    public string $entity;
+    public string $message= 'Entity {{ entity }} does not exists with id {{ id }}';
+    public function __construct($entity, mixed $options = null, ?array $groups = null, mixed $payload = null)
     {
         parent::__construct($options, $groups, $payload);
+        $this->entity = $entity;
+    }
+    public function validatedBy(): string
+    {
+        return EntityExistsValidator::class;
     }
 }
