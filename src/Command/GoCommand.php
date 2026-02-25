@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\DTOValidator\PostDTOValidator;
 use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Tag;
@@ -30,7 +31,7 @@ class GoCommand extends Command
     public function __construct(
         private EntityManagerInterface $em,
         private readonly PostService   $postService,
-        private PostValidator $postValidator,
+        private PostDTOValidator $postDTOValidator,
         private readonly PostResource $postResource,
         private PostResponseBuilder $postResponseBuilder,
         private PostFactory $postFactory,
@@ -55,11 +56,14 @@ class GoCommand extends Command
      //   $post = $this->postFactory->makeStorePostInputDTO($data);
         $storePostInputDTO = $this->storePostInputDTOFactory->makeStorePostInputDTO($data); // фабрика один
 
-        $this->postValidator->validate($storePostInputDTO); // по конвенции валидатор может принимать только DTO
+        $this->postDTOValidator->validate($storePostInputDTO); // по конвенции валидатор может принимать только DTO
+
+        // какая-то бизнес логика
         $post = $this->postService->store($storePostInputDTO);
 
      //   $post = $this->postResource->postItem($post);
-        $res = $this->postResponseBuilder->storeBuilder($post);
+        // вернули ответ
+        $res = $this->postResponseBuilder->storePostResponseBuilder($post); // и тут может быть DTO
         dd($res);
 
         return Command::SUCCESS;

@@ -20,18 +20,12 @@ class Post
     #[ORM\Column]
     private ?int $id = null;
     #[Groups(groups: ['post:item'])]
-    #[Assert\NotBlank(allowNull: null, normalizer: 'trim', message: 'bla bla bla')]
-    #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
     #[Groups(groups: ['post:item'])]
-    #[Assert\NotBlank(allowNull: true, normalizer: 'trim', message: 'bla bla bla')]
-    #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
     #[Groups(groups: ['post:item'])]
-    #[Assert\NotBlank(allowNull: true, normalizer: 'trim', message: 'bla bla bla')]
-    #[Assert\Length(min: 1, max: 20, minMessage: 'The post title is too short.')]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $content = null;
     #[Groups(groups: ['post:item'])]

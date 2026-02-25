@@ -2,7 +2,7 @@
 
 namespace App\Factory;
 
-use App\DTO\Input\StorePostInputDTO;
+use App\DTO\Input\Post\StorePostInputDTO;
 use App\Entity\Category;
 use App\Entity\Post;
 use Doctrine\ORM\EntityManagerInterface;

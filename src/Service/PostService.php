@@ -2,12 +2,11 @@
 
 namespace App\Service;
 
-use App\DTO\Input\StorePostInputDTO;
+use App\DTO\Input\Post\StorePostInputDTO;
 use App\Entity\Post;
 use App\Factory\PostFactory;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Psr\Log\LoggerInterface;
 
 class PostService
 {
@@ -22,7 +21,7 @@ class PostService
     {
         $post = $this->postFactory->makePost($storePostInputDTO); // в репозиторий может попасть только Entity,
         // поэтому делаем на фабрике пост
-        $this->postRepository->store($post);
+        $this->postRepository->store($post); // в репозиторий может попасть только Entity
         //    $this->entityManager->persist($post);
         //    $this->entityManager->flush();
         return $post;

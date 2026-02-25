@@ -3,18 +3,20 @@
 namespace App\ResponseBuilder;
 
 use App\Entity\Post;
+use App\Factory\PostOutputDTOFactory;
 use App\Resource\PostResource;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class PostResponseBuilder
 {
-    public function __construct(private PostResource $postResource)
+    public function __construct(private PostResource $postResource, private PostOutputDTOFactory $postOutputDTOFactory)
     {
     }
 
-    public function storeBuilder(Post $post, $status = 200, $headers = [], $isJson = true): JsonResponse
+    public function storePostResponseBuilder(Post $post, $status = 200, $headers = [], $isJson = true): JsonResponse
     {
-        $postResource = $this->postResource->postItem($post);
+        $postOutputDTO = $this->postOutputDTOFactory->makePostOutputDTO($post);
+        $postResource = $this->postResource->postItem($postOutputDTO);
         return new JsonResponse($postResource, $status, $headers = [], $isJson);
     }
 }
