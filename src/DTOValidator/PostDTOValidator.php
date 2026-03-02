@@ -3,6 +3,7 @@
 namespace App\DTOValidator;
 
 use App\DTO\Input\Post\StorePostInputDTO;
+use App\DTO\Input\Post\UpdatePostInputDTO;
 use App\Exception\ValidateException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -13,7 +14,7 @@ class PostDTOValidator
     {
     }
 
-    public function validate(StorePostInputDTO $post)
+    public function validate(StorePostInputDTO|UpdatePostInputDTO $post)
     {
         $errors = $this->validator->validate($post);
         $messages = [];

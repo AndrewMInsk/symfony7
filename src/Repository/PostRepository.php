@@ -25,4 +25,13 @@ class PostRepository extends ServiceEntityRepository
         }
         return $post;
     }
+
+    public function update(Post $post, $isFlush = true): Post
+    {
+        $this->entityManager->persist($post);
+        if ($isFlush) {
+            $this->entityManager->flush();
+        }
+        return $post;
+    }
 }

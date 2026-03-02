@@ -28,7 +28,7 @@ final class PostController extends AbstractController
     {
     }
 
-    #[Route('api/posts', name: 'posts_index', methods: ['GET'])]
+    #[Route('api/posts', name: 'posts_index', methods: ['GET'])] //list
     public function index(): JsonResponse
     {
         $posts = $this->postService->getPosts();
@@ -38,13 +38,13 @@ final class PostController extends AbstractController
 //        ]);
     }
 
-    #[Route('api/posts/{post}', name: 'posts_show', methods: ['GET'])]
+    #[Route('api/posts/{post}', name: 'posts_show', methods: ['GET'])] //one post
     public function show(Post $post): JsonResponse
     {
         return $this->postResponseBuilder->getPostResponseBuilder($post);
     }
 
-    #[Route('api/posts', name: 'posts_store', methods: ['POST'])]
+    #[Route('api/posts', name: 'posts_store', methods: ['POST'])] // post store
     public function store(Request $request): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
@@ -58,6 +58,23 @@ final class PostController extends AbstractController
 
         // вернули ответ
         return $this->postResponseBuilder->storePostResponseBuilder($post); // там сделали   DTO  и из него ресурс (там настройки групп)
+
+        //   return $this->postResponseBuilder->getPostResponseBuilder($post);
+    }
+    #[Route('api/posts/{post}', name: 'posts_update', methods: ['PATCH'])] // post update
+    public function update(Post $post, Request $request): JsonResponse
+    {
+        $data = json_decode($request->getContent(), true);
+        $updatePostInputDTO = $this->storePostInputDTOFactory->makeUpdatePostInputDTO($data); // делаем DTO из массива
+
+        $this->postDTOValidator->validate($updatePostInputDTO); // по конвенции валидатор может принимать только DTO
+        // // валидируем (параметры берем из аннотаций энтити)
+
+        // какая-то бизнес логика
+        $post = $this->postService->update($post, $updatePostInputDTO); // делаем там энтитю из ДТО и там сохраняем ее через репозиторий
+
+        // вернули ответ
+        return $this->postResponseBuilder->updatePostResponseBuilder($post); // там сделали   DTO  и из него ресурс (там настройки групп)
 
         //   return $this->postResponseBuilder->getPostResponseBuilder($post);
     }
