@@ -3,6 +3,8 @@
 namespace App\DTOValidator;
 
 use App\DTO\Input\Post\StorePostInputDTO;
+use App\Exception\ValidateException;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class PostDTOValidator
@@ -11,15 +13,17 @@ class PostDTOValidator
     {
     }
 
-    public function validate(StorePostInputDTO $post): void{
+    public function validate(StorePostInputDTO $post)
+    {
         $errors = $this->validator->validate($post);
         $messages = [];
-        if(count($errors) > 0){
+        if (count($errors) > 0) {
 
-            foreach($errors as $error){
+            foreach ($errors as $error) {
                 $messages[$error->getPropertyPath()][] = $error->getMessage();
             }
-            throw new \InvalidArgumentException(json_encode($messages));
+          //  return new JsonResponse($messages, 422);
+            throw new ValidateException($messages);
         }
     }
 }

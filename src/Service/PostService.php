@@ -17,6 +17,11 @@ class PostService
     {
     }
 
+    public function getPosts(): array
+    {
+        return $this->postRepository->findAll();
+    }
+
     public function store(StorePostInputDTO $storePostInputDTO): Post
     {
         $post = $this->postFactory->makePost($storePostInputDTO); // в репозиторий может попасть только Entity,

@@ -19,4 +19,16 @@ class PostResponseBuilder
         $postResource = $this->postResource->postItem($postOutputDTO);
         return new JsonResponse($postResource, $status, $headers = [], $isJson);
     }
+    public function getAllPostResponseBuilder(array $posts, $status = 200, $headers = [], $isJson = false): JsonResponse
+    {
+        $postOutputDTOs = $this->postOutputDTOFactory->makePostsOutputDTOs($posts);
+        $postResource = $this->postResource->postCollection($postOutputDTOs);
+        return new JsonResponse(['data'=>$postResource], $status, $headers = [], $isJson);
+    }
+    public function getPostResponseBuilder($post, $status = 200, $headers = [], $isJson = false): JsonResponse
+    {
+        $postOutputDTO = $this->postOutputDTOFactory->makePostOutputDTO($post);
+        $postResource = $this->postResource->postItem($postOutputDTO);
+        return new JsonResponse(['data'=>$postResource], $status, $headers = [], $isJson);
+    }
 }

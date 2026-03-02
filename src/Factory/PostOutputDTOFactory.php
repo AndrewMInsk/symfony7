@@ -15,6 +15,7 @@ class PostOutputDTOFactory
     public function makePostOutputDTO(Post $post): PostOutputDTO{
       //  $category = $this->entityManager->getReference(Category::class, $data['category_id']);
         $postOutput = new PostOutputDTO();
+        $postOutput->id =$post->getId();
         $postOutput->title =$post->getTitle();
         $postOutput->content =$post->getContent();
         $postOutput->publishedAt =$post->getPublishedAt();
@@ -22,5 +23,10 @@ class PostOutputDTOFactory
         $postOutput->category =$post->getCategory();
         $postOutput->description =$post->getDescription();
         return $postOutput;
+    }
+
+    public function makePostsOutputDTOs(array $posts):array
+    {
+        return array_map(fn(Post $post) => $this->makePostOutputDTO($post), $posts);
     }
 }

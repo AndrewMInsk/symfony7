@@ -49,7 +49,7 @@ class GoCommand extends Command
             'description' => 'description1',
             'published_at' => new \DateTimeImmutable('2025-12-20'),
             'status' => 2,
-            'category_id' => 11,
+            'category_id' => 1,
         ];
         // обрабатываем Request
         // мы делаем это для того что бы конкретно нужный атрибутивный состав валидировать и сохранять
