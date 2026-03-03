@@ -34,4 +34,11 @@ class PostRepository extends ServiceEntityRepository
         }
         return $post;
     }
+    public function destroy(Post $post, $isFlush = true): void
+    {
+        $this->entityManager->remove($post);
+        if ($isFlush) {
+            $this->entityManager->flush();
+        }
+    }
 }

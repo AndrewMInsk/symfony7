@@ -37,4 +37,8 @@ class PostResponseBuilder
         $postResource = $this->postResource->postItem($postOutputDTO);
         return new JsonResponse(['data'=>$postResource], $status, $headers = [], $isJson);
     }
+    public function destroyPostResponseBuilder($status = 200, $headers = [], $isJson = false): JsonResponse
+    {
+        return new JsonResponse(['message'=>'destroy'], $status, $headers = [], $isJson);
+    }
 }

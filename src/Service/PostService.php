@@ -41,4 +41,9 @@ class PostService
         //    $this->entityManager->flush();
         return $post;
     }
+
+    public function destroy(Post $post):void
+    {
+        $this->postRepository->destroy($post);
+    }
 }

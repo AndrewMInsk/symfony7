@@ -78,4 +78,16 @@ final class PostController extends AbstractController
 
         //   return $this->postResponseBuilder->getPostResponseBuilder($post);
     }
+    #[Route('api/posts/{post}', name: 'posts_destroy', methods: ['DELETE'])] // post update
+    public function destroy(Post $post): JsonResponse
+    {
+
+        // какая-то бизнес логика
+        $this->postService->destroy($post);
+
+        // вернули ответ
+        return $this->postResponseBuilder->destroyPostResponseBuilder(); // там сделали   DTO  и из него ресурс (там настройки групп)
+
+        //   return $this->postResponseBuilder->getPostResponseBuilder($post);
+    }
 }
