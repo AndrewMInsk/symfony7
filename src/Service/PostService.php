@@ -5,6 +5,7 @@ namespace App\Service;
 use App\DTO\Input\Post\StorePostInputDTO;
 use App\DTO\Input\Post\UpdatePostInputDTO;
 use App\Entity\Post;
+use App\Exception\EntityNotFoundException;
 use App\Factory\PostFactory;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -21,6 +22,15 @@ class PostService
     public function getPosts(): array
     {
         return $this->postRepository->findAll();
+    }
+
+    public function findPost(int $id): Post
+    {
+        $post = $this->postRepository->find($id);
+        if (!$post) {
+            throw new EntityNotFoundException(Post::class, $id);
+        }
+        return $post;
     }
 
     public function store(StorePostInputDTO $storePostInputDTO): Post
