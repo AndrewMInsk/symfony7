@@ -17,3 +17,6 @@ controllers:
 api_auth_login:
     path: /api/auth/login
     methods: [POST]
+api_auth_token:
+    path: /api/auth/refresh
+    methods: [POST]
