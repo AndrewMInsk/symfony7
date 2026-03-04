@@ -14,3 +14,6 @@ controllers:
 #    path: /posts
 #    controller: App\Controller\PostController::index
 #    methods: [GET]
+api_login_check:
+    path: /api/login_check
+    methods: [POST]

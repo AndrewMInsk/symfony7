@@ -27,7 +27,15 @@ final class PostController extends AbstractController
     )
     {
     }
-
+    #[Route('posts', name: 'posts_index2', methods: ['GET'])] //list
+    public function index2(): JsonResponse
+    {
+        $posts = $this->postService->getPosts();
+        return $this->postResponseBuilder->getAllPostResponseBuilder($posts);
+//        return $this->render('post/index.html.twig', [
+//            'controller_name' => 'PostController',
+//        ]);
+    }
     #[Route('api/posts', name: 'posts_index', methods: ['GET'])] //list
     public function index(): JsonResponse
     {
