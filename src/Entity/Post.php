@@ -181,6 +181,7 @@ class Post
     }
     #[ORM\PreUpdate]
     public function onPreUpdate() // не самый крутой метод, так как он неявный. И засоряет энтитю.
+        // Лучше делать Listener
         // И не забыть #[ORM\HasLifecycleCallbacks] вверху
         // заметил что это идет перед Listenerом отдельным
 

@@ -6,6 +6,7 @@ use App\DTOValidator\PostDTOValidator;
 use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Tag;
+use App\Event\Post\PostCreatedEvent;
 use App\Factory\PostFactory;
 use App\Factory\StorePostInputDTOFactory;
 use App\Resource\PostResource;
@@ -20,6 +21,7 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 #[AsCommand(
@@ -36,6 +38,7 @@ class GoCommand extends Command
         private PostResponseBuilder $postResponseBuilder,
         private PostFactory $postFactory,
         private StorePostInputDTOFactory $storePostInputDTOFactory,
+        private EventDispatcherInterface $eventDispatcher,
     )
     {
         parent::__construct();
@@ -47,6 +50,7 @@ class GoCommand extends Command
         $post->setDescription('ertetrert999991');
         $this->em->persist($post);
         $this->em->flush();
+        $this->eventDispatcher->dispatch(new PostCreatedEvent($post), PostCreatedEvent::NAME);
         $data = [
             'title' => '12',
             'content' => 'content1',
