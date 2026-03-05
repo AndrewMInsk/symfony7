@@ -169,3 +169,25 @@
 [361] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
 [361] Log closed at 2026-03-05 19:25:50.364344
 
+[363] Log opened at 2026-03-05 19:27:36.869788
+[363] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.363'
+[363] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[363] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[363] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[363] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[363] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[363] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[363] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[363] Log closed at 2026-03-05 19:27:36.986838
+
+[365] Log opened at 2026-03-05 19:27:58.785542
+[365] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.365'
+[365] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[365] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[365] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[365] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[365] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[365] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[365] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[365] Log closed at 2026-03-05 19:27:58.893675
+
