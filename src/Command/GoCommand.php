@@ -43,6 +43,10 @@ class GoCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $post = $this->em->getRepository(Post::class)->findOneBy(['title'=>'title1']);
+        $post->setTitle('ertetrert');
+        $this->em->persist($post);
+        $this->em->flush();
         $data = [
             'title' => '12',
             'content' => 'content1',

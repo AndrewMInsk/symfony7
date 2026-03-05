@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ORM\HasLifecycleCallbacks]
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
 {
@@ -177,5 +178,11 @@ class Post
 
         return $this;
     }
+    #[ORM\PreUpdate]
+    public function onPreUpdate() // не самый крутой метод, так как он неявный. И засоряет энтитю.
+        // И не забыть #[ORM\HasLifecycleCallbacks] вверху
 
+    {
+        dd(222);
+    }
 }
