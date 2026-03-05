@@ -61,7 +61,7 @@ final class PostController extends AbstractController
         $this->postDTOValidator->validate($storePostInputDTO); // по конвенции валидатор может принимать только DTO
         // // валидируем (параметры берем из аннотаций энтити)
 
-        // какая-то бизнес логика
+        // какая-то бизнес логика (не в контроллере)
         $post = $this->postService->store($storePostInputDTO); // делаем там энтитю из ДТО и там сохраняем ее через репозиторий
 
         // вернули ответ
@@ -78,7 +78,7 @@ final class PostController extends AbstractController
         $this->postDTOValidator->validate($updatePostInputDTO); // по конвенции валидатор может принимать только DTO
         // // валидируем (параметры берем из аннотаций энтити)
 
-        // какая-то бизнес логика
+        // какая-то бизнес логика (не в контроллере)
         $post = $this->postService->update($post, $updatePostInputDTO); // делаем там энтитю из ДТО и там сохраняем ее через репозиторий
 
         // вернули ответ
@@ -91,7 +91,7 @@ final class PostController extends AbstractController
     {
         $post = $this->postService->findPost($id);
 
-        // какая-то бизнес логика
+        // какая-то бизнес логика (не в контроллере)
         $this->postService->destroy($post);
 
         // вернули ответ

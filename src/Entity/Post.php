@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\HasLifecycleCallbacks]
+#[ORM\EntityListeners(['App\Listener\Entity\PostListener'])]
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
 {
@@ -181,8 +182,9 @@ class Post
     #[ORM\PreUpdate]
     public function onPreUpdate() // не самый крутой метод, так как он неявный. И засоряет энтитю.
         // И не забыть #[ORM\HasLifecycleCallbacks] вверху
+        // заметил что это идет перед Listenerом отдельным
 
     {
-        dd(222);
+        dump('onPreUpdate from Entity');
     }
 }

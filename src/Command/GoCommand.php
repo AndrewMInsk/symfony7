@@ -43,15 +43,15 @@ class GoCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $post = $this->em->getRepository(Post::class)->findOneBy(['title'=>'title1']);
-        $post->setTitle('ertetrert');
+        $post = $this->em->getRepository(Post::class)->findOneBy(['title'=>'title12']);
+        $post->setDescription('ertetrert999991');
         $this->em->persist($post);
         $this->em->flush();
         $data = [
             'title' => '12',
             'content' => 'content1',
             'description' => 'description1',
-            'published_at' => new \DateTimeImmutable('2025-12-20'),
+            'published_at' => '2025-12-20',
             'status' => 2,
             'category_id' => 1,
         ];
