@@ -10,7 +10,7 @@ class PostCreatedListener
 {
     public function someMethod(PostCreatedEvent $event): void
     {
-        dump('event from listener');
-        dd($event->getPost());
+        dump('Custom event from listener');
+       // dd($event->getPost());
     }
 }

@@ -191,3 +191,146 @@
 [365] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
 [365] Log closed at 2026-03-05 19:27:58.893675
 
+[367] Log opened at 2026-03-05 19:31:15.601672
+[367] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.367'
+[367] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[367] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[367] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[367] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[367] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[367] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[367] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[367] Log closed at 2026-03-05 19:31:15.731974
+
+[369] Log opened at 2026-03-05 19:32:25.838754
+[369] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.369'
+[369] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[369] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[369] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[369] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[369] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[369] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[369] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[369] Log closed at 2026-03-05 19:32:25.966510
+
+[371] Log opened at 2026-03-05 19:33:11.235214
+[371] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.371'
+[371] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[371] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[371] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[371] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[371] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[371] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[371] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[371] Log closed at 2026-03-05 19:33:11.365798
+
+[373] Log opened at 2026-03-05 19:33:41.831576
+[373] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.373'
+[373] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[373] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[373] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[373] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[373] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[373] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[373] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[373] Log closed at 2026-03-05 19:33:41.959567
+
+[375] Log opened at 2026-03-05 19:34:16.829640
+[375] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.375'
+[375] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[375] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[375] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[375] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[375] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[375] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[375] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[375] Log closed at 2026-03-05 19:34:16.959071
+
+[15] Log opened at 2026-03-09 10:32:50.682757
+[15] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.15'
+[15] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[15] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[15] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[15] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[15] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[15] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[15] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[15] Log closed at 2026-03-09 10:32:50.882051
+
+[17] Log opened at 2026-03-09 10:42:37.998755
+[17] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.17'
+[17] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[17] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[17] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[17] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[54] Log opened at 2026-03-09 10:42:40.251347
+[54] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.54'
+[54] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[54] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[54] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[54] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[54] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[54] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[54] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[54] Log closed at 2026-03-09 10:42:41.279397
+
+[58] Log opened at 2026-03-09 10:42:41.295209
+[58] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.58'
+[58] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[58] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[58] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[58] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[58] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[58] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[58] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[58] Log closed at 2026-03-09 10:42:41.356797
+
+[17] Log closed at 2026-03-09 10:42:42.086941
+
+[63] Log opened at 2026-03-09 10:43:52.910503
+[63] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.63'
+[63] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[63] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[63] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[63] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[63] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[63] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[63] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[63] Log closed at 2026-03-09 10:43:52.991875
+
+[65] Log opened at 2026-03-09 10:44:20.660085
+[65] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.65'
+[65] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[65] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[65] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[65] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[65] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[65] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[65] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[76] Log opened at 2026-03-09 10:46:40.772174
+[76] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.76'
+[76] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[76] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[76] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[76] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[76] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[76] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[76] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[76] Log closed at 2026-03-09 10:46:40.875269
+
+[87] Log opened at 2026-03-09 10:46:40.884134
+[87] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.87'
+[87] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[87] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[87] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[87] [Step Debug] WARN: Could not discover client host through HTTP headers, connecting to configured address/port: host.docker.internal:9003.
+[87] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[87] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[87] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port).
+[87] Log closed at 2026-03-09 10:46:40.981986
+
+[65] Log closed at 2026-03-09 10:46:40.989823
+
